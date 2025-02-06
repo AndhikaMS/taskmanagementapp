@@ -1,0 +1,594 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f1f1f1; /* Subtle light background */
+}
+
+/* Container: Flex layout for sidebar and main content */
+.container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    height: 100vh; /* Full height */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;         /* Lebar tetap 250px */
+    min-width: 250px;     /* Jangan lebih kecil dari 250px */
+    flex-shrink: 0;       /* Jangan menyusut saat container mengecil */
+    background: #34495e;
+    color: white;
+    padding-top: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu items */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu li {
+    width: 100%;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0; /* Increased padding for more spacing */
+    font-size: 20px; /* Consistent font size */
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+}
+
+.menu a i {
+    font-size: 30px; /* Larger icon size */
+    margin-bottom: 10px; /* Adjusted space between icon and text */
+}
+
+.menu a:hover {
+    background: #2c3e50; /* Slightly darker on hover */
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #ecf0f1; /* Light gray background */
+    height: 100%;
+}
+
+/* Navbar */
+.navbar {
+    background: #2980b9; /* Lively blue color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Notebook container (Daftar Catatan dan Editor) */
+.notebook-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px); /* Adjusted to make space for navbar */
+    background: #ffffff; /* Bright background for editor */
+    border: 2px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar-notes: List of notes */
+.sidebar-notes {
+    width: 30%; /* Adjusted to make sidebar more balanced */
+    background: #f9f9f9; /* Slightly off-white for sidebar */
+    padding: 15px;
+    border-right: 2px solid #ddd;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.sidebar-notes h3 {
+    text-align: center;
+    font-size: 18px;
+    color: #34495e; /* Darker heading color */
+}
+
+.sidebar-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-notes li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    color: #34495e;
+}
+
+.sidebar-notes li:hover {
+    background: #ecf0f1; /* Light hover effect */
+}
+
+.sidebar-notes button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #1abc9c; /* Fresh teal color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-notes button:hover {
+    background: #16a085; /* Darker teal on hover */
+}
+
+/* Note-editor: Text area for note editing */
+.note-editor {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 100%; /* Full height */
+}
+
+/* Textarea for note content */
+.note-editor textarea {
+    width: 100%;
+    height: calc(100% - 80px); /* Adjust height dynamically */
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    background: #f5f5f5; /* Slight gray background */
+    outline: none;
+    resize: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Save button */
+#save-note {
+    margin-top: 10px;
+    padding: 10px;
+    background: #27ae60; /* Green for save button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#save-note:hover {
+    background: #2ecc71; /* Lighter green on hover */
+}
+
+/* General styling for list items */
+#note-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin: 4px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for icons to place them next to each other */
+.note-icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for edit and delete icons */
+#note-list li span {
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* Styling for edit icon */
+.edit-icon::before {
+    content: '\270E'; /* Unicode for pencil icon */
+    color: #2980b9; /* Blue color for edit icon */
+}
+
+/* Styling for delete icon */
+.delete-icon::before {
+    content: '\2716'; /* Unicode for X mark */
+    color: #e74c3c; /* Red color for delete icon */
+}
+
+/* Hover effect for icons */
+.note-icons span:hover {
+    opacity: 0.7;
+}
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Warna latar belakang lebih cerah */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Ikon Hobby */
+.hobby-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.hobby-icon {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100px; /* Ukuran ikon lebih besar dan teratur */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobby-icon:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0; /* Efek hover lebih jelas */
+}
+
+.hobby-icon img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.hobby-icon span {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Panel Hobby */
+.panel-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hobby-panel {
+    display: none; /* Sembunyikan panel secara default */
+    width: 80%;
+    max-width: 900px;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.hobby-panel h3 {
+    font-size: 32px;
+    color: #0056b3;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h4 {
+    font-size: 24px;
+    color: #444;
+    margin-top: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.info-box {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.info-box p {
+    color: #666;
+    line-height: 1.7;
+}
+
+strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .hobby-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hobby-icon {
+        width: 120px;
+        margin-bottom: 20px;
+        padding: 12px;
+    }
+
+    .panel-container {
+        margin-top: 20px;
+    }
+
+    .hobby-panel {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hobby-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hobby-icon span {
+        font-size: 14px;
+    }
+
+    .hobby-panel {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+}
+
+/* Task Management Container */
+.task-container {
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.task-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Task Form */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-form label {
+    font-weight: 600;
+    color: #34495e;
+    font-size: 14px;
+}
+
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.2);
+}
+
+.task-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* File Upload */
+.task-form input[type="file"] {
+    border: none;
+    padding: 8px;
+    background: #ffffff;
+}
+
+/* Submit Button */
+.task-form button {
+    padding: 12px;
+    border: none;
+    background-color: #2980b9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.task-form button:hover {
+    background-color: #1f6696;
+}
+
+/* Task List */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.task-list li {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task-list li:hover {
+    transform: scale(1.02);
+}
+
+/* Task Content */
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.task-desc {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Deadline & Date */
+.task-meta {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Task Actions */
+.task-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Status Button */
+.task-status {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-status.completed {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.task-status.completed:hover {
+    background-color: #27ae60;
+}
+
+.task-status.incomplete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.task-status.incomplete:hover {
+    background-color: #c0392b;
+}
+
+/* Delete Button */
+.task-delete {
+    padding: 6px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .task-container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .task-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

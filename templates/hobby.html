@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+    <div class="hobby-icons">
+        <!-- Ikon Hobby -->
+        <div class="hobby-icon" onclick="goToOlahragaPanel()">
+            <img src="{{ url_for('static', filename='or.png') }}" alt="Olahraga" />
+            <span>Olahraga</span>
+        </div>
+        <div class="hobby-icon" onclick="goToBelajarPanel()">
+            <img src="{{ url_for('static', filename='book.png') }}" alt="Belajar" />
+            <span>Belajar</span>
+        </div>
+        <div class="hobby-icon" onclick="goToOtherHobbyPanel()">
+            <img src="{{ url_for('static', filename='lainnya.png') }}" alt="Hobby Lainnya" />
+            <span>Hobby Lainnya</span>
+        </div>
+    </div>
+
+    <!-- Panel Konten -->
+    <div class="panel-container" id="panel-container">
+        <!-- Panel Olahraga -->
+        <div id="olahraga-panel" class="hobby-panel">
+            <h3>Jenis Olahraga untuk Kebugaran</h3>
+            <p>Olahraga adalah cara terbaik untuk menjaga kebugaran tubuh. Berikut adalah beberapa jenis olahraga yang bisa Anda lakukan secara rutin:</p>
+            <ul>
+                <li>Lari - Pagi hari, 30 menit</li>
+                <li>Sepak Bola - 2 kali seminggu, 60 menit</li>
+                <li>Basket - 3 kali seminggu, 60 menit</li>
+                <li>Renang - 1 kali seminggu, 45 menit</li>
+            </ul>
+            <div class="info-box">
+                <h4>Rutinitas Olahraga Sehat</h4>
+                <p>Disarankan untuk berolahraga secara teratur untuk menjaga tubuh tetap bugar. Lakukan setiap jenis olahraga secara bergantian agar tubuh Anda tetap aktif dan tidak jenuh.</p>
+                <p><strong>Rekomendasi:</strong> Cobalah untuk mengikuti rutinitas olahraga selama minimal 3 bulan untuk mendapatkan hasil yang maksimal.</p>
+            </div>
+        </div>
+
+        <!-- Panel Belajar -->
+        <div id="belajar-panel" class="hobby-panel">
+            <h3>Jenis Belajar yang Mengasah Otak dan Logika</h3>
+            <p>Belajar adalah kegiatan yang penting untuk meningkatkan kemampuan otak. Berikut adalah beberapa jenis aktivitas belajar yang dapat membantu mengasah logika dan otak Anda:</p>
+            <ul>
+                <li>Matematika - 3 kali seminggu, 45 menit</li>
+                <li>Pemrograman - 4 kali seminggu, 60 menit</li>
+                <li>Logika Berpikir - Setiap hari, 20 menit</li>
+                <li>Fisika - 2 kali seminggu, 60 menit</li>
+            </ul>
+            <div class="info-box">
+                <h4>Rutinitas Belajar yang Efektif</h4>
+                <p>Belajar secara rutin dan terjadwal sangat penting untuk meningkatkan kecerdasan. Buat jadwal yang teratur dan pastikan untuk meluangkan waktu untuk refleksi setelah setiap sesi belajar.</p>
+                <p><strong>Rekomendasi:</strong> Setiap sesi belajar tidak lebih dari 60 menit, diikuti dengan waktu istirahat untuk otak Anda.</p>
+            </div>
+        </div>
+
+        <!-- Panel Hobby Lainnya -->
+        <div id="other-hobby-panel" class="hobby-panel">
+            <h3>Hobby Lainnya</h3>
+            <p>Selain olahraga dan belajar, berikut adalah beberapa hobby yang dapat membantu Anda tetap produktif dan kreatif:</p>
+            <ul>
+                <li>Memasak - 2 kali seminggu, 60 menit</li>
+                <li>Fotografi - Akhir pekan, 2 jam</li>
+                <li>Menulis - Setiap hari, 30 menit</li>
+                <li>Melukis - 1 kali seminggu, 2 jam</li>
+            </ul>
+            <div class="info-box">
+                <h4>Rutinitas Hobby yang Bermanfaat</h4>
+                <p>Melakukan hobby dapat meningkatkan kreativitas dan memberikan relaksasi. Jangan ragu untuk mencoba berbagai aktivitas yang membuat Anda senang.</p>
+                <p><strong>Rekomendasi:</strong> Cobalah untuk meluangkan waktu untuk hobby Anda setiap minggu untuk menjaga keseimbangan hidup.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='hobby.js') }}"></script>
+
+{% endblock %}

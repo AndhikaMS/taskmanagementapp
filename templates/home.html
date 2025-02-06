@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="home-container" style="padding: 30px;">
+        <h2>Selamat Datang di Website Task Management & Notes</h2>
+        <br>
+        <p>
+            Website ini dirancang untuk membantu Anda mengatur tugas harian dan mencatat ide-ide penting dengan mudah.
+            Di sini, Anda dapat mengelola daftar tugas, membuat catatan, dan juga mendapatkan inspirasi seputar hobi yang
+            dapat meningkatkan produktivitas serta keseimbangan hidup.
+        </p>
+        <br>
+
+        <h3>Fitur Unggulan</h3>
+        <div class="features" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+            <div class="feature" style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fas fa-tasks" style="font-size: 40px; color: #2980b9;"></i>
+                <h4>Manajemen Tugas</h4>
+                <p>Atur dan kelola daftar tugas harian Anda dengan fitur CRUD yang mudah digunakan. Tandai tugas yang telah selesai dan perbarui statusnya dengan cepat.</p>
+            </div>
+            <div class="feature" style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fas fa-sticky-note" style="font-size: 40px; color: #27ae60;"></i>
+                <h4>Catatan Cepat</h4>
+                <p>Buat dan simpan catatan penting Anda dengan mudah. Fitur ini memungkinkan Anda untuk menyimpan ide atau informasi penting dalam hitungan detik.</p>
+            </div>
+            <div class="feature" style="flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <i class="fas fa-heartbeat" style="font-size: 40px; color: #e67e22;"></i>
+                <h4>Informasi lainnya</h4>
+                <p>Dapatkan inspirasi dan tips seputar olahraga, belajar, hobi, & hal lainnya untuk menemani anda di aplikasi ini.</p>
+            </div>
+        </div>
+        <br>
+        <h3>Ayo Mulai!</h3>
+        <p>
+            Silakan gunakan menu navigasi di sebelah kiri untuk mengakses fitur-fitur yang tersedia. Semoga aplikasi ini membantu Anda dalam meningkatkan produktivitas dan mencapai keseimbangan dalam hidup.
+        </p>
+    </div>
+{% endblock %}

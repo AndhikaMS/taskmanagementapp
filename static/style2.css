@@ -1,0 +1,195 @@
+/* General Container */
+.task-container {
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.task-container h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Task Form */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-form label {
+    font-weight: 600;
+    color: #34495e;
+    font-size: 14px;
+}
+
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.2);
+}
+
+.task-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* File Upload */
+.task-form input[type="file"] {
+    border: none;
+    padding: 8px;
+    background: #ffffff;
+}
+
+/* Submit Button */
+.task-form button {
+    padding: 12px;
+    border: none;
+    background-color: #2980b9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.task-form button:hover {
+    background-color: #1f6696;
+}
+
+/* Task List */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.task-list li {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task-list li:hover {
+    transform: scale(1.02);
+}
+
+/* Task Details */
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.task-desc {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Deadline & Date */
+.task-meta {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Task Actions */
+.task-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Status Button */
+.task-status {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-status.completed {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.task-status.completed:hover {
+    background-color: #27ae60;
+}
+
+.task-status.incomplete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.task-status.incomplete:hover {
+    background-color: #c0392b;
+}
+
+/* Delete Button */
+.task-delete {
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .task-container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .task-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

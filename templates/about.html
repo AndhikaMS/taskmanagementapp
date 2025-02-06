@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Tambahkan styling tombol khusus di sini -->
+<style>
+  .button-green {
+    background-color: #27ae60; /* Warna hijau */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-green:hover {
+    background-color: #218c53;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+<div class="task-container" style="display: flex; gap: 20px; padding: 20px;">
+    <!-- Panel Kiri: Daftar Tugas -->
+    <div class="sidebar-tasks" style="flex: 1; border-right: 2px solid #ddd; padding-right: 20px;">
+        <h3>Daftar Tugas</h3>
+        <ul id="task-list" style="list-style: none; padding: 0;"></ul>
+        <!-- Gunakan kelas button-green untuk tombol Tambah Tugas -->
+        <button onclick="newTask()" class="button-green" style="margin-top: 10px;">Tambah Tugas</button>
+    </div>
+
+    <!-- Panel Kanan: Editor Tugas -->
+    <div class="task-editor" style="flex: 1; padding-left: 20px;">
+        <h3>Editor Tugas</h3>
+        <input type="text" id="task-name" placeholder="Nama Tugas" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <textarea id="task-description" placeholder="Deskripsi Tugas" style="width: 100%; padding: 8px; margin-bottom: 10px; height: 100px;"></textarea>
+        <label for="task-date">Tanggal Tugas:</label>
+        <input type="date" id="task-date" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <label for="task-deadline">Deadline Tugas:</label>
+        <input type="date" id="task-deadline" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <!-- Gunakan kelas button-green untuk tombol Simpan Tugas -->
+        <button id="save-task" onclick="saveOrUpdateTask()" class="button-green" style="width: 100%;">Simpan Tugas</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='about.js') }}"></script>
+{% endblock %}
